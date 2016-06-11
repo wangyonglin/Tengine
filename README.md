@@ -9,8 +9,4 @@ yum groupinstall "Development Tools"
 yum install pcre-devel openssl-devel libxml2-devel libxslt-devel gd-devel lua-devel geoip-devel
 
 #安装Tengine 编译参数
-./configure \
---prefix=/usr/local/nginx \
---user=wangyan \
---group=html \
---enable-mods-shared=all
+./configure --prefix=/usr/local/nginx --user=wangyan --group=html --enable-mods-shared=all
