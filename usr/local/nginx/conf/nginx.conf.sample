@@ -26,7 +26,8 @@ root $MAGE_ROOT/pub;
 index index.php;
 autoindex off;
 charset UTF-8;
-#add_header "X-UA-Compatible" "IE=Edge";
+#支持360浏览器
+add_header "X-UA-Compatible" "IE=Edge";
 
 location ~* ^/setup($|/) {
     root $MAGE_ROOT;
