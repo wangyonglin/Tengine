@@ -39,3 +39,20 @@ Configuration summary
   
   nginx http proxy temporary files: "proxy_temp"
 
+server {
+    listen       80;
+    server_name mage.dev;
+    root /var/www/www.eeob.com/pub;
+   
+    location / {
+        index index.php; #跳转到www.example.com/index.php
+        autoindex on;
+    }   
+
+    #当请求网站下php文件的时候，反向代理到php-fpm
+    location ~ \.php$ {
+        include /usr/local/nginx/conf/fastcgi.conf; #加载nginx的fastcgi模块
+        fastcgi_intercept_errors on;
+        fastcgi_pass   127.0.0.1:9000; #nginx fastcgi进程监听的IP地址和端口
+    }
+}
