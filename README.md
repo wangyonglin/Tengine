@@ -1,16 +1,16 @@
 # Tengine
-#增加组
+# 增加组
   groupadd nginx
-#增加用户
+# 增加用户
   useradd -r -g nginx -M nginx -s /sbin/nologin -d /var/www
-#安装开发组件
+# 安装开发组件
   yum groupinstall "Development Tools"
-#安装Tengine依赖组件
+# 安装Tengine依赖组件
   yum install pcre-devel openssl-devel libxml2-devel libxslt-devel gd-devel lua-devel geoip-devel
 
-#安装Tengine 编译参数
-./configure --prefix=/usr/local/nginx --user=nginx --group=nginx --enable-mods-shared=all
-#默认配置目录
+# 安装Tengine 编译参数
+./configure --prefix=/usr/local/nginx --user=nginx --group=nginx
+# 默认配置目录
 Configuration summary
   + using system PCRE library
   + using system OpenSSL library
