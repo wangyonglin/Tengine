@@ -2,7 +2,7 @@
 #增加组
 groupadd html
 #增加用户
-useradd -g html -s /sbin/nologin -d /var/www wangyonglin
+useradd -r -g nginx -M nginx -s /sbin/nologin -d /var/www
 #安装开发组件
 yum groupinstall "Development Tools"
 #安装Tengine依赖组件
