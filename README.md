@@ -6,10 +6,11 @@
 # 安装开发组件
   yum groupinstall "Development Tools"
 # 安装Tengine依赖组件
-  yum install pcre-devel openssl-devel libxml2-devel libxslt-devel gd-devel lua-devel geoip-devel
+  yum install -y vim lrzsz tree screen psmisc lsof tcpdump wget  ntpdate  gcc gcc-c++ glibc glibc-devel pcre pcre-devel openssl  openssl-devel systemd-devel net-tools iotop bc  zip unzip zlib-devel bash-completion nfs-utils automake libxml2  libxml2-devel libxslt libxslt-devel perl perl-ExtUtils-Embed
 
 # 安装Tengine 编译参数
-./configure --prefix=/usr/local/nginx --user=nginx --group=nginx
+./configure --prefix=/usr/local/nginx  \
+       --user=nginx   --group=nginx 
 # 默认配置目录
 Configuration summary
   + using system PCRE library
