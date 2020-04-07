@@ -11,49 +11,12 @@
 # 安装Tengine 编译参数
 ./configure --prefix=/usr/local/nginx  \
        --user=nginx   --group=nginx 
-# 默认配置目录
-Configuration summary
-  + using system PCRE library
-  + using system OpenSSL library
-  + md5: using OpenSSL library
-  + sha1: using OpenSSL library
-  + using system zlib library
-  + jemalloc library is disabled
+# composer 下载失败解决办法
+1、更换成阿里镜像：
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
-  nginx path prefix: "/usr/local/nginx"
-  
-  nginx binary file: "/usr/local/nginx/sbin/nginx"
-  
-  nginx configuration prefix: "/usr/local/nginx/conf"
-  
-  nginx configuration file: "/usr/local/nginx/conf/nginx.conf"
-  
-  nginx pid file: "/usr/local/nginx/logs/nginx.pid"
-  
-  nginx error log file: "/usr/local/nginx/logs/error.log"
-  
-  nginx http access log file: "/usr/local/nginx/logs/access.log"
-  
-  nginx http client request body temporary files: "client_body_temp"
-  
-  nginx dso module path: "/usr/local/nginx/modules/"
-  
-  nginx http proxy temporary files: "proxy_temp"
+2、更换成Laravel China镜像：
+composer config -g repo.packagist composer https://packagist.laravel-china.org
 
-server {
-    listen       80;
-    server_name mage.dev;
-    root /var/www/www.eeob.com/pub;
-   
-    location / {
-        index index.php; #跳转到www.example.com/index.php
-        autoindex on;
-    }   
-
-    #当请求网站下php文件的时候，反向代理到php-fpm
-    location ~ \.php$ {
-        include /usr/local/nginx/conf/fastcgi.conf; #加载nginx的fastcgi模块
-        fastcgi_intercept_errors on;
-        fastcgi_pass   127.0.0.1:9000; #nginx fastcgi进程监听的IP地址和端口
-    }
-}
+3、更换成中国全量镜像：
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
