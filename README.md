@@ -9,7 +9,7 @@
   yum install pcre-devel openssl-devel libxml2-devel libxslt-devel gd-devel lua-devel geoip-devel
 
 # 安装Tengine 编译参数
-./configure --prefix=/usr/local/nginx --user=nginx --group=nginx
+./configure --prefix=/usr/local/nginx --user=nginx --group=nginx --with-http_sub_module=shared
 # 默认配置目录
 Configuration summary
   + using system PCRE library
