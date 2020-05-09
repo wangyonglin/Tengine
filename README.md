@@ -22,6 +22,7 @@
 		}
 
 #配置nginx开机启动，切换到/lib/systemd/system目录,创建nginx.service文件：
+```
 	[Unit]
 	Description=nginx
 	After=network.target
@@ -33,6 +34,7 @@
 	PrivateTmp=true
 	[Install]
 	WantedBy=multi-user.target
+```
 # composer 下载失败解决办法
 1、更换成阿里镜像：
 	`composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/`
