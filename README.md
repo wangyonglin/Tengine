@@ -20,6 +20,19 @@
 		if ($http_host !=	www.wangyonglin.com) {
 				rewrite ^/(.*)$		http://www.wangyonglin.com/$1 permanent;
 		}
+
+#配置nginx开机启动，切换到/lib/systemd/system目录,创建nginx.service文件：
+	[Unit]
+	Description=nginx
+	After=network.target
+	[Service]
+	Type=forking
+	ExecStart=/usr/local/nginx/sbin/nginx
+	ExecReload=/usr/local/nginx/sbin/nginx reload
+	ExecStop=/usr/local/nginx/sbin/nginx quit
+	PrivateTmp=true
+	[Install]
+	WantedBy=multi-user.target
     
 # composer 下载失败解决办法
 1、更换成阿里镜像：
